@@ -1,0 +1,37 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700);
+@font-face{
+  font-family: 'Tacite';
+  src: url('Tacite.woff');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 48px;
+  font-family: 'Tacite';
+  background-color: black;
+}
+
+.left {
+  width: 50%;
+  /*height: 1800px;*/ /* Die Höhe variiert je nach Fensterbreite */
+  /*float: left;*/
+  text-align: center;
+}
+
+.right {
+  width: 50%;
+  height: 100vh; /* um zu verhindern, dass die Seite immer größer wird, je weiter man scrollt, kann man das rechte div auf 100vh beschränken ... */
+  overflow: hidden; /* ... und alles verstecken, was darüber hinaus ragt */
+  position: fixed; /* dann fixieren wir das div noch, damit es nicht wegscrollt. Nun wird die Höhe der ganzen Seite nur noch durch .left bestimmt */
+  top: 0;
+  right: 0;
+  text-align: center;
+}
+
+
+.left img,
+.right img {
+  display: block; /* ungewollte Abstände verhindern */
+  width: 100%; /* .left und .right definieren bereits die Breite */
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Scroll</title>
+
+    <link href="index.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+
+
+
+    <div class="left">
+       <div class="arrow">
+    		<img src="]https://i.ibb.co/mvCwpFV/left.jpg" alt="" data-src="]https://i.ibb.co/mvCwpFV/left.jpg" class="e_img">
+    </div>
+
+
+
+    <div class="right">
+       <img src="https://i.ibb.co/KxN259n/right.jpg" alt="" data-src="https://i.ibb.co/KxN259n/right.jpg" class="e_img">
+    </div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+
+  	var right = $('.right img');
+
+  	//schieben wir zuerst .right in die Ausgangsposition
+  	//-100% der eigenen Höhe = oben komplett außerhalb des sichtbaren Bereichs
+  	//+100vh Bildschirmhöhe = wieder nach unten, sodass der Bildschirm gefüllt ist
+  	var defaultTransform = 'translateY(-100%) translateY(100vh)';
+  	right.css('transform', defaultTransform);
+
+     $(window).scroll(function() {
+
+     	var scrollPosition = $(this).scrollTop();
+     	//zusätzlich dazu kommt jetzt noch die Scrollposition in Pixel
+     	right.css('transform', defaultTransform + ' translateY(' + scrollPosition + 'px)');
+    }).scroll();
+});
+
+</script>
+  </body>
+</html>
